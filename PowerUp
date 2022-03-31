@@ -1,0 +1,8 @@
+namespace MyGame
+{
+    enum PowerUp
+    {
+        health,
+        shield
+    }
+}

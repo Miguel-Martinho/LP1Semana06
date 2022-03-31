@@ -39,5 +39,18 @@ namespace MyGame
             newName.Trim();
             name = newName;
         }
+        public void PickupPowerUp(PowerUp pwup, float value )
+        {
+            if (pwup == PowerUp.health)
+                if (health + value > 100)
+                    health = 100;
+                else
+                    health += value;
+            else if (pwup == PowerUp.shield)
+                if (shield + value > 100)
+                    shield = 100;
+                else
+                    shield += value;
+        }
     }
 }
