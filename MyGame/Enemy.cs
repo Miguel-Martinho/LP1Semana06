@@ -2,14 +2,23 @@ namespace MyGame
 {
     public class Enemy
     {
-        private int health;
-        private int shield;
+        private static int powerUpCount;
+        private float health;
+        private float shield;
         private string name;
         public Enemy(string name)
         {
-            name = SetName(this.name);
+            SetName(name);
             health = 100;
             shield = 0;
+        }
+        static Enemy()
+        {
+            powerUpCount = 0;
+        }
+        public static int GetPowCount()
+        {
+            return powerUpCount;
         }
         public string GetName()
         {
@@ -30,7 +39,7 @@ namespace MyGame
         {
             return name;
         }
-        public int GetShield()
+        public float GetShield()
         {
             return shield;
         }
@@ -41,6 +50,7 @@ namespace MyGame
         }
         public void PickupPowerUp(PowerUp pwup, float value )
         {
+            powerUpCount += 1;
             if (pwup == PowerUp.health)
                 if (health + value > 100)
                     health = 100;

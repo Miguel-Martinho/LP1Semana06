@@ -1,6 +1,8 @@
+
+using System;
 namespace MyGame
 {
-    enum PowerUp
+    public enum PowerUp
     {
         health,
         shield
