@@ -4,9 +4,10 @@ namespace MyGame
     {
         private int health;
         private int shield;
+        private string name;
         public Enemy(string name)
         {
-            this.name = name;
+            name = SetName(this.name);
             health = 100;
             shield = 0;
         }
@@ -24,6 +25,19 @@ namespace MyGame
                 health -= damageStillToInflict;
                 if (health < 0) health = 0;
             }
+        }
+        public string GetHealth()
+        {
+            return name;
+        }
+        public int GetShield()
+        {
+            return shield;
+        }
+        public void SetName(string newName)
+        {
+            newName.Trim();
+            name = newName;
         }
     }
 }
